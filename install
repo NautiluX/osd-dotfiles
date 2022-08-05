@@ -4,6 +4,7 @@ set -e
 
 CONFIG="install_osd.conf.yaml"
 CONFIG_LINUX="install.linux.conf.yaml"
+CONFIG_DARWIN="install.darwin.conf.yaml"
 DOTBOT_DIR="dotbot"
 
 DOTBOT_BIN="bin/dotbot"
@@ -17,6 +18,10 @@ git submodule update --init --recursive "${DOTBOT_DIR}"
 
 if [[ $(uname) == Linux ]];then
   "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_LINUX}" "${@}"
+fi
+
+if [[ $(uname) == Darwin ]];then
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_DARWIN}" "${@}"
 fi
 
 echo 'Add the following to your bashrc:'

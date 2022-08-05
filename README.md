@@ -3,7 +3,7 @@
 ## Usage
 
 ```
-git clone -C ~/.osd-dotfiles git@github.com:NautiluX/osd-dotfiles 
+git clone git@github.com:NautiluX/osd-dotfiles ~/.osd-dotfiles 
 cd ~/.osd-dotfiles 
 ./install
 ```

@@ -1,0 +1,8 @@
+- clean: ['~']
+
+- create:
+  - ~/bin-tools
+
+- shell:
+  - [cd ~/bin-tools; wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/latest/openshift-client-mac.tar.gz; tar xf openshift-client-mac.tar.gz; rm openshift-client-mac.tar.gz]
+  - [cd ~/bin-tools; wget https://github.com/openshift-online/ocm-cli/releases/download/v0.1.64/ocm-darwin-amd64 -O ocm; chmod +x ocm]
