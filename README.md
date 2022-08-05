@@ -1,5 +1,10 @@
 # OSD dotfiles
 
+## Prerequisites
+
+* git
+* wget
+
 ## Usage
 
 ```
