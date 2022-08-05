@@ -1,0 +1,3 @@
+#!/bin/bash
+
+ocm login --token="$OCM_TOKEN" --url=https://api.integration.openshift.com

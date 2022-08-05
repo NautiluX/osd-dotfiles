@@ -1,0 +1,17 @@
+- clean: ['~']
+
+- link:
+    ~/.osdctl.yaml: osdctl.yaml
+    ~/bin-osd:
+        path: bin-osd/
+        create: true
+
+- create:
+  - ~/git
+  - ~/bin-tools
+
+- shell:
+  - [git clone -C ~/git/ops-sop git@github.com/openshift/ops-sop || true]
+  - [git clone -C ~/git/osdctl git@github.com/openshift/osdctl || true]
+  - [cd ~/git/osdctl; git pull; go install]
+  - [curl https://raw.githubusercontent.com/NautiluX/osdk/main/osdk -o ~/bin-tools/osdk;chmod +x ~/bin-tools/osdk;]

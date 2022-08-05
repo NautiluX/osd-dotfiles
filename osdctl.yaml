@@ -1,0 +1,4 @@
+loginScripts:
+  https://api.stage.openshift.com: v4stage
+  https://api.openshift.com: v4prod
+  https://api.integration.openshift.com: v4int

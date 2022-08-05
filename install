@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+set -e
+
+CONFIG="install_osd.conf.yaml"
+CONFIG_LINUX="install.linux.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+if [[ $(uname) == Linux ]];then
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG_LINUX}" "${@}"
+fi
+
+echo 'Add the following to your bashrc:'
+echo 'export OCM_TOKEN=<your ocm token, get it from https://console.redhat.com/openshift/token/show#>'
+echo 'export PATH="$HOME/bin-osd:$HOME/bin-tools:$PATH"'
