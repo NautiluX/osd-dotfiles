@@ -5,4 +5,4 @@
 
 - shell:
   - [cd ~/bin-tools; wget https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/latest/openshift-client-linux.tar.gz; tar xf openshift-client-linux.tar.gz; rm openshift-client-linux.tar.gz]
-  - [cd ~/bin-tools; wget https://github.com/openshift-online/ocm-cli/releases/download/v0.1.64/ocm-linux-amd64 -o ocm; chmod +x ocm]
+  - [cd ~/bin-tools; wget https://github.com/openshift-online/ocm-cli/releases/download/v0.1.64/ocm-linux-amd64 -O ocm; chmod +x ocm]
